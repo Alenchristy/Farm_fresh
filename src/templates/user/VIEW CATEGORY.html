@@ -1,0 +1,45 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="csearch">
+  <h3 align="center">CATEGORIES</h3>
+  <td align="left">
+      <div class="col-xs-2">
+           <input id="ex1" placeholder="search category" class="form-control" type="text" name="textfield"/>
+      </div>
+          <input type="submit" name="Submit" class="btn btn-warning" value="Search" />
+  </td>
+  <br><br>
+    <table width="690" border="0">
+      <!--<tr>-->
+        <!--<th width="272" height="57" >CATEGORY NAME </th>-->
+        <!--<th width="105">IMAGE</th>-->
+        <!--<th width="250">&nbsp;</th>-->
+      <!--</tr>-->
+
+       <tr> {% for i in val %}
+
+      <td>
+        <div align="center" class="card" >
+            <img  class="card-img-top" src="/static/cat/category{{i['image']}}" height="130px" width="120px" alt="Card image cap" />
+          <br>
+            <div align="center" class="card-body"><h5 class="card-title">{{i['category_name']}}</h5></div>
+
+        <div align="center" class="card-body"><a href="products?id={{i['category_id']}}" class="btn btn-warning" >VIEW</a></div>
+      </div>
+      </td>
+
+
+
+
+
+      <!--<tr>-->
+      <!--<td align="center">{{i['category_name']}}</td>-->
+        <!--<td align="center"><img src="/static/cat/category{{i['image']}}" height="90px" width="100px"/></td>-->
+        <!--<td align="center"><a href="products?id={{i['category_id']}}" class="btn btn-warning" >VIEW</a></td>-->
+      <!--</tr>-->
+      {% endfor %}</tr>
+  </table>
+</form>
+{% endblock %}

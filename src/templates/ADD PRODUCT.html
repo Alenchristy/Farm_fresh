@@ -1,0 +1,68 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<form action="addpro" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+  <div align="center">
+    <table width="329" height="357" border="1" id="customers">
+      <tr>
+        <th width="103" height="43"><div align="center">NAME</div></th>
+        <td width="218"><label>
+          <input type="text" name="textfield" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="68"><div align="center">DETAILS</div></th>
+        <td><label>
+        <textarea name="textarea"></textarea>
+</label></td>
+      </tr>
+      <tr>
+        <th height="39"><div align="center">PRICE</div></th>
+        <td><label>
+          <input type="text" name="textfield2" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="40"><div align="center">STOCK</div></th>
+        <td><label>
+          <input type="text" name="textfield3" /><select name="qty">
+            <option>Kg</option>
+            <option>Nos</option>
+        </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="51"><div align="center">IMAGE</div></th>
+        <td><label>
+          
+          <div align="center">
+            <input type="file" name="file" />
+          </div>
+        </label></td>
+      </tr>
+
+      <tr>
+        <th height="51"><div align="center">CATEGORY</div></th>
+        <td><span class="style3">          </span>          
+            <label>          </label>
+          <label></label>
+        <div align="center"><span class="style3"> </span>
+          <select name="select" class="form-control">
+              {% for i in val %}
+              <option value="{{i['category_id']}}">{{i['category_name']}}</option>
+              {% endfor %}
+          </select>
+        </div></td></tr>
+      <tr>
+        <td height="45" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" class="btn btn-success" value="ADD" />
+        </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+<div align="justify"></div></form>
+{% endblock %}

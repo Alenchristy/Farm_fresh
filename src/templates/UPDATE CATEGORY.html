@@ -1,0 +1,29 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+<form action="updcat" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="371" height="168" border="1" id="customers">
+      <tr>
+        <th width="137">CATEGORY NAME </th>
+        <td width="218"><label>
+          <input type="text" name="textfield" value={{val['category_name']}} />
+        </label></td>
+      </tr>
+      <tr>
+        <th>IMAGE</th>
+        <td><label>
+          <input type="file" name="file" value={{val['image']}} />
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div align="center">
+            <input type="submit" class="btn btn-success" name="Submit" value="ADD" />
+          </div>
+        </td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

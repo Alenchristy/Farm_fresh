@@ -1,0 +1,66 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<form action="adhom" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="421" border="1" id="customers">
+      <tr>
+        <th height="49"><div align="center">NAME</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield4" />
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th width="112" height="45"><div align="center">DETAILS</div></th>
+        <td width="293"><label>
+          <div align="center">
+            <label>
+            <textarea name="textarea"></textarea>
+            </label>
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="63"><div align="center">RATE</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield2" />
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="61"><div align="center">STATUS</div></th>
+        <td><label>
+          <div align="center">
+            <label>
+            <input name="radiobutton" type="radio" value="Available" />
+            AVAILABLE            </label>
+            <label>
+            
+            <input name="radiobutton" type="radio" value="Not Available" />
+            NOT AVAILABLE            </label>
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="67"><div align="center">IMAGE</div></th>
+        <td><label>
+        <div align="center">
+          <input type="file" name="file" />
+        </div>
+        </label></td>
+      </tr>
+      <tr>
+        <td height="47" colspan="2"><label>
+          <div align="center">
+            <input type="submit" name="Submit" class="btn btn-success" value="ADD" />
+          </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

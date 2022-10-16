@@ -1,0 +1,30 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table class="" border="1" id="customers" >
+    <!--<table class="table table-hover table table-dark">-->
+      <tr>
+        <td height="39" colspan="3"><div align="right"><a href="addcategory" class="btn btn-success">ADD CATEGORY</a></div></td>
+      </tr>
+      <tr>
+        <th width="172" height="53"><div align="center">CATEGORY NAME </div></th>
+        <th width="88"><div align="center">IMAGE</div></th>
+        <th width="190">Options&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i['category_name']}}</td>
+        <td><img src="/static/cat/category{{i['image']}}" height="50px" width="50px"/></td>
+        <td><a href="upcat?id={{ i['category_id'] }}" class="btn btn-success">UPDATE</a>&nbsp;
+        <a href="delcat?id={{ i['category_id'] }}" class="btn btn-danger">REMOVE</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}}

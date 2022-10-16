@@ -1,0 +1,29 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="598" height="133" border="1" id="customers">
+      <tr>
+        <th>IMAGE</th>
+        <th>HOME-STAY NAME </th>
+        <th >RATE</th>
+        <th >STATUS</th>
+        <th width="87">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td align="center"><img src="/static/hom/hom{{i['image']}}" height="90px" width="100px"/>&nbsp;</td>
+        <td align="center">{{i['h_name']}}</td>
+        <td align="center">{{i['rate']}}&nbsp;</td>
+        <td align="center">{{i['status']}}&nbsp;</td>
+        <td><label>
+          <div align="center"><a href="viewhomes?id={{ i['h_id'] }}" class="btn btn-warning">VIEW</a></div>
+        </label></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

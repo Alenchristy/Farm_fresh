@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<form action="addcat" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="371" height="168" border="1" id="customers">
+      <tr>
+        <th width="137">CATEGORY NAME </th>
+        <td width="218"><label>
+          <input type="text" name="textfield" />
+        </label></td>
+      </tr>
+      <tr>
+        <th>IMAGE</th>
+        <td><label>
+          <input type="file" name="file" />
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label>
+          <div align="center">
+            <input type="submit" name="Submit" class="btn btn-warning" value="ADD" />
+          </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

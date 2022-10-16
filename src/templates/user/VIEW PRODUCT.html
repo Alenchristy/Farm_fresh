@@ -1,0 +1,64 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/buynow">
+    <table  border="1" id="customers">
+      <tr>
+        <th >PRODUCT IMAGE</th>
+        <td ><img src="/static/pro/product{{val['image']}}" height="50px" width="70px"/><label></label></td>
+      </tr>
+      <tr>
+        <th>PRODUCT NAME</th>
+        <td>&nbsp;{{val['p_name']}}</td>
+      </tr>
+      <tr>
+        <th> PRICE</th>
+        <td>&nbsp;{{val['price']}} /{{val['quantity']}}</td>
+      </tr>
+      <tr>
+        <th>STOCK</th>
+        <td>{{val['stock']}} {{val['quantity']}}</td>
+      </tr>
+      <tr>
+        <th>DETAILS</td>
+        <td>{{val['details']}}&nbsp;</td>
+      </tr>
+
+      <tr>
+        <th>QUANTITY</th>
+        <td><label>
+          <input type="text" name="select"/>{{val['quantity']}}
+            <!--<div align="center">-->
+                <!--<select name="select">-->
+                  <!--{% for i in range(1,6) %}-->
+                  <!--<option>{{i}}</option>-->
+                  <!--{% endfor %}-->
+                <!--</select> {{val['quantity']}}-->
+          <!--</div>-->
+        </label></td>
+      </tr>
+
+      <tr>
+        <th >ADDRESS</th>
+        <td><label>
+          <div align="center">
+            <label>
+            <textarea name="textarea"> {{val2['place']}}, {{val2['post']}}, {{val2['pin']}}, {{val2['phone']}}</textarea>
+            </label>
+          </div>
+        </label></td>
+      </tr>
+      <tr>
+
+        <td align="center"><input type="submit" name="Submit2"  class="btn btn-success" value="BUY NOW" /></td>
+        <td align="center">
+          <!--<form id="form2" name="form2" method="post" action="/buynow">-->
+            <input type="submit" name="Submit2" class="btn btn-warning" value="ADD TO CART" />
+          <!--</form>-->
+       </td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <div align="center"> 
+    <table width="487" height="391" border="1" id="customers">
+      <tr>
+        <th width="250" height="53"><div align="center"> IMAGE </div></th>
+        <td width="221"><img src="/static/hom/hom{{val['image']}}" height="50px" width="50px"/></td>
+      </tr>
+      <tr>
+        <th height="48"><div align="center">HOME-STAY NAME </div></th>
+        <td>{{val['h_name']}} </td>
+      </tr>
+      <tr>
+        <th height="51"><div align="center">RATE</div></th>
+        <td>{{val['rate']}} </td>
+      </tr>
+      <tr>
+        <th height="59"><div align="center">AVAILABILITY</div></th>
+        <td>{{val['status']}}</td>
+      </tr>
+      <tr>
+        <th height="74"><div align="center">DETAILS</div></th>
+        <td>{{val['details']}}</td>
+      </tr>
+      <tr>
+        <td height="70" colspan="2"><label>
+            <div align="center" class="btn btn-success"><a href="">BOOK NOW</a></div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

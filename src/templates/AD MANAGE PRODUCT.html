@@ -1,0 +1,48 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+<form id="form1" name="form1" method="post" action="search1">
+  
+    <table  id="customers" class="table table-borderless table table-hover">
+      <tr>
+        <td colspan="6">
+          <div align="right">
+            <input type="text" name="textfield" class="form-control"/>
+             </div>
+          <div>
+
+           </div>
+        </td>
+        <td colspan="2"> <input type="submit" name="Submit" value="SEARCH" class="btn btn-primary"/></td>
+      </tr>
+      <tr>
+        <td colspan="7"><div align="right"><a href="addproduct" class="btn btn-success">ADD PRODUCT</a></div></td>
+      </tr>
+      <tr>
+        <th width="107">NAME</th>
+        <th width="144">DETAILS</th>
+        <th width="103">PRICE</th>
+        <th width="156">CATEGORY</th>
+        <th width="136">STOCK</th>
+        <th width="124">IMAGE</th>
+        <th width="138">OPTIONS</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;{{i['p_name']}}</td>
+        <td>&nbsp;{{i['details']}}</td>
+        <td>&nbsp;{{i['price']}}</td>
+        <td>&nbsp;{{i['category_name']}}</td>
+        <td>{{i['stock']}} {{i['quantity']}}</td>
+        <td><img src="/static/pro/product{{i['image']}}" height="50px" width="50px"/></td>
+
+        <td><p><a href="editpro?id={{ i['product_id'] }}" class="btn btn-success">UPDATE</a></p>
+        <p><a href="delpro?id={{ i['product_id'] }}" class="btn btn-danger">REMOVE</a></p></td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+
+{% endblock %}
+
