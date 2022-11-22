@@ -1,5 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
@@ -8,25 +11,28 @@
 <body>
 <form id="form1" name="form1" method="post" action="">
   <div align="center">
-    <table width="425" height="139" border="1">
+    <table width="500" height="160" border="" id="customers" >
       <tr>
-        <td width="66"><div align="center">IMAGE</div></td>
-        <td width="159"><div align="center">BOOKING DATE </div></td>
-        <td width="99"><div align="center">AMOUNT</div></td>
-        <td width="73">&nbsp;</td>
+        <th width="66"><div align="center">HOME-STAY</div></th>
+        <th width="66"><div align="center">HOME-STAY</div></th>
+        <th width="159"><div align="center">BOOKING DATE </div></th>
+        <th width="99"><div align="center">AMOUNT</div></th>
+        <th width="73">&nbsp;STATUS</th>
+        <th width="73">&nbsp;OPTIONS</th>
       </tr>
+
+      {% for i in v %}
       <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><label>
-          <div align="center">
-            <input type="submit" name="Submit" value="CANCEL" />
-            </div>
-        </label></td>
+        <td><div align="center"><img src="/static/hom/hom{{i['image']}}" height="70px" width="80px"  /></div></td>
+        <td><div align="center">{{i['h_name']}}&nbsp;</div></td>
+        <td><div align="center">{{i['book_dat']}}&nbsp;</div></td>
+        <td><div align="center">{{i['rate']}}</div></td>
+        <td><div align="center">{{i['status']}}</div></td>
+        <td><div align="center"><a href="cancelbook?id={{i['b_id']}}" class="btn btn-warning btn-sm" >CANCEL BOOKINGS</a></div></td>
       </tr>
+      {% endfor %}
       </table>
   </div>
 </form>
 </body>
-</html>
+{% endblock %}

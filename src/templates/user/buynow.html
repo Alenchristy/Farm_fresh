@@ -1,0 +1,79 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+<head>
+   <style>
+        .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+
+  border-radius: 15px;
+  background: #fff;
+  margin: auto;
+  width: 45%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+<!--/* On mouse-over, add a deeper shadow */-->
+<!--.card:hover {-->
+  <!--box-shadow: 0 8px 16px 0 rgba(25, 72, 225, 0.2);-->
+<!--}-->
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+::-webkit-file-upload-button {
+  background: black;
+  color: green;
+  padding: 1em;
+  border-radius: 15px;
+}
+.card:hover {
+  box-shadow: 0 10px 18px 0 rgba(25, 72, 225, 0.2);
+  transform:scale(1.02);
+  transition: 2s;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+
+
+    </style>
+</head>
+
+
+<form id="form1" name="form1" method="post" action="paym" enctype="multipart/form-data">
+
+<div class="card" align="center">
+
+            <div class="card-body" >
+              <h5 class="card-title"></h5>
+              <br>
+              <!--<div>Selected Quantity: {{p}}</div>-->
+               <!--<div style="color:black" class="card-body">Delivery Address: {{val2['place']}}, {{val2['post']}}, {{val2['pin']}}, {{val2['phone']}}&nbsp;</h5></div>-->
+              <br><div>Total Amount to pay: {{pr}} </div><br>
+             <div><img width="50%" height="40%" src="static/pay.jpg"/></div>
+               <div>(*There is no refund available on order cancelation)</div>
+              <br>
+
+                    <label for="file-upload" class="custom-file-upload">
+                        Upload Your Payment Screenshot
+                    </label>
+                    <input id="file-upload" name="file" type="file" required/>
+
+              <br><div><input type="submit" name="Submit2"  class="btn btn-success" value="PLACE ORDER" /></div><br>
+            </div>
+          </div>
+
+
+
+
+  </div>
+</form>
+{% endblock %}

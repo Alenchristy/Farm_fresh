@@ -1,0 +1,33 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="622" height="122" border="1" id="customers">
+
+      <tr>
+        <th width="156"><div align="center">PRODUCTS </div></th>
+        <th width="156"><div align="center">Quantity</div></th>
+      </tr>
+
+      {% for i in val %}
+      <tr>
+        <td align="center"><img src="/static/pro/product{{i['image']}}" height="50px" width="50px"/>  {{i['p_name']}}</td>
+        <td align="center">{{i['quantity']}} {{i['qty']}}</td>
+          <!--<input type="submit" name="Submit" value="CANCEL ORDER" /></td>-->
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}
+

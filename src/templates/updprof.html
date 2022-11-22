@@ -1,77 +1,4 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
-<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
-<!--<head>-->
-<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
-<!--<title>Untitled Document</title>-->
-<!--</head>-->
 
-<!--<body>-->
-<!--<form id="form1" name="form1" method="post" action="updpro">-->
-  <!--<div align="center">-->
-    <!--<table width="312" border="1">-->
-      <!--<tr>-->
-        <!--<td width="125">First Name </td>-->
-        <!--<td width="171"><label>-->
-          <!--<input type="text" name="textfield" value="{{val['first_name']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Last Name </td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield2" value="{{val['last_name']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Gender</td>-->
-        <!--<td><label>-->
-          <!--<input name="radiobutton" type="radio" value="MALE" {% if val['gender']=='MALE'  %}checked {% endif %}/>-->
-          <!--Male-->
-          <!--<input name="radiobutton" type="radio" value="FEMALE" {% if val['gender']=='FEMALE'  %}checked {% endif %}/>-->
-          <!--Female-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Place</td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield3" value="{{val['place']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Post</td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield4" value="{{val['post']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Pincode</td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield5" value="{{val['pin']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Phone Number </td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield6" value="{{val['phone']}}"/>-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>Email id </td>-->
-        <!--<td><label>-->
-          <!--<input type="text" name="textfield7" value="{{val['email_id']}}" />-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td colspan="2"><label>-->
-          <!--<div align="center">-->
-            <!--<input type="submit" name="Submit" value="UPDATE" />-->
-          <!--</div>-->
-        <!--</label></td>-->
-      <!--</tr>-->
-      <!--</table>-->
-  <!--</div>-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
 
 
 
@@ -126,7 +53,7 @@
                         </div>
 
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="radiobutton" id="femaleGender" value="FEMALE" {% if val['gender']=='MALE'  %}checked {% endif %}/>
+                          <input class="form-check-input" type="radio" name="radiobutton" id="femaleGender" value="FEMALE" {% if val['gender']=='FEMALE'  %}checked {% endif %}/>
                           <label class="form-check-label" for="femaleGender">FEMALE</label>
                         </div>
                       </div>
@@ -174,7 +101,7 @@
                       </div>
                     </div>
 
-                    <div class="mt-4 pt-2">
+                    <div class="mt-4 pt-2" align="center">
                       <input class="btn btn-primary btn-lg" type="submit" value="update" />
                     </div>
 

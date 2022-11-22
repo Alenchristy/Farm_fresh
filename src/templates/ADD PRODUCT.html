@@ -2,67 +2,175 @@
 
 {% block body %}
 
-<form action="addpro" method="post" enctype="multipart/form-data" name="form1" id="form1">
 
-  <div align="center">
-    <table width="329" height="357" border="1" id="customers">
-      <tr>
-        <th width="103" height="43"><div align="center">NAME</div></th>
-        <td width="218"><label>
-          <input type="text" name="textfield" required/>
-        </label></td>
-      </tr>
-      <tr>
-        <th height="68"><div align="center">DETAILS</div></th>
-        <td><label>
-        <textarea name="textarea"></textarea>
-</label></td>
-      </tr>
-      <tr>
-        <th height="39"><div align="center">PRICE</div></th>
-        <td><label>
-          <input type="text" name="textfield2" required/>
-        </label></td>
-      </tr>
-      <tr>
-        <th height="40"><div align="center">STOCK</div></th>
-        <td><label>
-          <input type="text" name="textfield3" /><select name="qty">
-            <option>Kg</option>
-            <option>Nos</option>
-        </select>
-        </label></td>
-      </tr>
-      <tr>
-        <th height="51"><div align="center">IMAGE</div></th>
-        <td><label>
-          
-          <div align="center">
-            <input type="file" name="file" />
-          </div>
-        </label></td>
-      </tr>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <tr>
-        <th height="51"><div align="center">CATEGORY</div></th>
-        <td><span class="style3">          </span>          
-            <label>          </label>
-          <label></label>
-        <div align="center"><span class="style3"> </span>
-          <select name="select" class="form-control">
-              {% for i in val %}
-              <option value="{{i['category_id']}}">{{i['category_name']}}</option>
-              {% endfor %}
-          </select>
-        </div></td></tr>
-      <tr>
-        <td height="45" colspan="2"><label>
-        <div align="center">
-          <input type="submit" name="Submit" class="btn btn-success" value="ADD" />
-        </div>
-        </label></td>
-      </tr>
-      </table>
-  </div>
-<div align="justify"></div></form>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+        form{
+            border-radius: 20px;
+            border: solid rebeccapurple;
+            transition: 2s;
+        }
+        form:hover{
+            transform: scale(1.03);
+        }
+        label{
+            font-weight: 500;
+
+        }
+        .btn{
+        width: 50%;
+        }
+        h3{
+            font-weight: 500;
+            color: rgb(88, 160, 160);
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="container p-5 mt-5" style="background: #ffe; border-radius: 25px;">
+        <form class="p-4 " form action="addpro" method="post" enctype="multipart/form-data">
+            <h3 class="text-center mt-5"><i>ADD PRODUCT</i></h3><br>
+            <div class="row">
+            <div class="form-group col-md-6">
+              <label for="Medicine">Name</label>
+              <input type="text" class="form-control" id="Medicine" name="textfield" placeholder="PRODUCT NAME" required>
+
+            </div>
+            <div class="form-group col-md-6">
+              <label for="details">DETAILS</label>
+                <textarea class="form-control" name="textarea"  id="details" placeholder="DETAILS" required></textarea>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="PRICE">PRICE</label>
+                  <input type="text" class="form-control" id="PRICE" name="textfield2" placeholder="PRICE" required>
+                </div>
+                <div class="col-md-6 row">
+                <div class="form-group col-md-10">
+                  <label for="stock">STOCK</label>
+                  <input type="text" class="form-control" id="stock" name="textfield3" placeholder="STOCK"  required>
+                </div>
+                    <div class="col-md-2" style="margin-top:34px">
+                        <select name="qty" class="form-control" required>
+                    <option>Kg</option>
+                     <option>Nos</option>
+                     </select>
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                      <label >CATEGORY</label>
+                      <select name="select" class="form-control">
+                        {% for i in val %}
+                        <option value="{{i['category_id']}}">{{i['category_name']}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+                     <div class="form-group col-md-6">
+                      <label for="image">IMAGE</label>
+                      <input type="file" class="form-control" name="file" id="image"  required>
+                    </div>
+                    </div>
+
+            <div align="center"><br>
+            <button type="submit" class="btn btn-success btn-lg">ADD</button></div>
+          </form>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+
+
+
+
+
+
+
+
+
+<!--<form action="addpro" method="post" enctype="multipart/form-data" name="form1" id="form1">-->
+
+  <!--<div align="center">-->
+    <!--<table width="329" height="357" border="1" id="customers">-->
+      <!--<tr>-->
+        <!--<th width="103" height="43"><div align="center">NAME</div></th>-->
+        <!--<td width="218"><label>-->
+          <!--<input type="text" name="textfield" required/>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="68"><div align="center">DETAILS</div></th>-->
+        <!--<td><label>-->
+        <!--<textarea name="textarea" required></textarea>-->
+<!--</label></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="39"><div align="center">PRICE</div></th>-->
+        <!--<td><label>-->
+          <!--<input type="text" name="textfield2" required/>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="40"><div align="center">STOCK</div></th>-->
+        <!--<td><label>-->
+          <!--<input type="text" name="textfield3" required/><select name="qty">-->
+            <!--<option>Kg</option>-->
+            <!--<option>Nos</option>-->
+        <!--</select>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="51"><div align="center">IMAGE</div></th>-->
+        <!--<td><label>-->
+          <!---->
+          <!--<div align="center">-->
+            <!--<input type="file" name="file" />-->
+          <!--</div>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<th height="51"><div align="center">CATEGORY</div></th>-->
+        <!--<td><span class="style3">          </span>-->
+            <!--<label>          </label>-->
+          <!--<label></label>-->
+        <!--<div align="center"><span class="style3"> </span>-->
+          <!--<select name="select" class="form-control">-->
+              <!--{% for i in val %}-->
+              <!--<option value="{{i['category_id']}}">{{i['category_name']}}</option>-->
+              <!--{% endfor %}-->
+          <!--</select>-->
+        <!--</div></td></tr>-->
+      <!--<tr>-->
+        <!--<td height="45" colspan="2"><label>-->
+        <!--<div align="center">-->
+          <!--<input type="submit" name="Submit" class="btn btn-success" value="ADD" />-->
+        <!--</div>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+      <!--</table>-->
+  <!--</div>-->
+<!--<div align="justify"></div></form>-->
 {% endblock %}

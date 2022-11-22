@@ -1,0 +1,63 @@
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+<head>
+   <style>
+        .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+
+  border-radius: 15px;
+  background: #fff;
+
+  width: 30%;
+  height: 25%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+<!--/* On mouse-over, add a deeper shadow */-->
+<!--.card:hover {-->
+  <!--box-shadow: 0 8px 16px 0 rgba(25, 72, 225, 0.2);-->
+<!--}-->
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+::-webkit-file-upload-button {
+  background: black;
+  color: green;
+  padding: 1em;
+  border-radius: 15px;
+}
+
+    </style>
+</head>
+
+
+<form id="form1" name="form1" method="post" action="cartpay" enctype="multipart/form-data">
+    <button type="button" class="btn btn-primary position-relative">
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger"> {{vl['COUNT(notifi)']}} <span class="visually-hidden">Message</span>
+    </span>
+</button><br><br>
+    {% for i in val %}
+<div class="card">
+
+            <div class="card-body" >
+              <h5 class="card-title"></h5>
+
+                <div>{{i['names']}}</div>
+
+                <br>
+             <div>{{i['notifi']}}</div>
+               </div>
+            </div><br>
+    {% endfor %}
+
+</form>
+
+
+{% endblock %}

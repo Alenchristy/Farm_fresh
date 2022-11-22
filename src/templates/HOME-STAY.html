@@ -4,26 +4,26 @@
 
 <form id="form1" name="form1" method="post" action="">
   <div align="center">
-    <table width="511" height="215" border="1" id="customers">
+    <table width="511" height="215"  class="table table-borderless table-light table-hover mt-4">
       <tr>
         <td height="60" colspan="6"><div align="right"><a href="addhomestay" class="btn btn-success">ADD HOMESTAY</a></div></td>
       </tr>
       <tr>
-        <th width="78">IMAGE</th>
-        <th width="69">NAME</th>
-        <th width="85">DETAILS</th>
+        <th width="78"><div align="center">IMAGE</th>
+        <th width="69"><div align="center">NAME</th>
+        <th width="85"><div align="center">DETAILS</th>
         <th width="70"><div align="center">RATE</div></th>
-        <th width="74">STATUS</th>
-        <th width="95">options</th>
+        <th width="74"><div align="center">STATUS</th>
+        <th width="95"><div align="center">OPTIONS</th>
       </tr>
       {% for i in val %}
       <tr>
-        <td><img src="/static/hom/hom{{i['image']}}" height="50px" width="50px"/></td>
-        <td>&nbsp;{{i['h_name']}}</td>
-        <td height="74">{{i['details']}}</td>
-        <td>&nbsp;{{i['rate']}}</td>
-        <td>&nbsp;{{i['status']}}</td>
-        <td><p align="center"><a href="editho?id={{ i['h_id'] }}" class="btn btn-success">UPDATE</a></p>
+        <td><div align="center"><img src="/static/hom/hom{{i['image']}}" height="50px" width="50px"/></td>
+        <td><div align="center">&nbsp;{{i['h_name']}}</td>
+        <td height="74"><div align="center">{{i['details']}}</td>
+        <td><div align="center">&nbsp;{{i['rate']}}</td>
+        <td><div align="center">&nbsp;{{i['status']}}</td>
+        <td><p align="center"><a href="editho?id={{ i['h_id'] }}" class="btn btn-warning">UPDATE</a></p>
         <p align="center"><a href="delhom?id={{ i['h_id'] }}" class="btn btn-danger">REMOVE</a></p></td>
       </tr>
       {% endfor %}

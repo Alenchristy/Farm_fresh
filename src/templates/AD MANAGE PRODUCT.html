@@ -1,48 +1,169 @@
 {% extends'admin home.html' %}
 
 {% block body %}
-<form id="form1" name="form1" method="post" action="search1">
-  
-    <table  id="customers" class="table table-borderless table table-hover">
-      <tr>
-        <td colspan="6">
-          <div align="right">
-            <input type="text" name="textfield" class="form-control"/>
-             </div>
-          <div>
 
-           </div>
-        </td>
-        <td colspan="2"> <input type="submit" name="Submit" value="SEARCH" class="btn btn-primary"/></td>
-      </tr>
-      <tr>
-        <td colspan="7"><div align="right"><a href="addproduct" class="btn btn-success">ADD PRODUCT</a></div></td>
-      </tr>
-      <tr>
-        <th width="107">NAME</th>
-        <th width="144">DETAILS</th>
-        <th width="103">PRICE</th>
-        <th width="156">CATEGORY</th>
-        <th width="136">STOCK</th>
-        <th width="124">IMAGE</th>
-        <th width="138">OPTIONS</th>
-      </tr>
-      {% for i in val %}
-      <tr>
-        <td>&nbsp;{{i['p_name']}}</td>
-        <td>&nbsp;{{i['details']}}</td>
-        <td>&nbsp;{{i['price']}}</td>
-        <td>&nbsp;{{i['category_name']}}</td>
-        <td>{{i['stock']}} {{i['quantity']}}</td>
-        <td><img src="/static/pro/product{{i['image']}}" height="50px" width="50px"/></td>
+<style>
+  .btn{
+  border-radius: 6px;
+  }
 
-        <td><p><a href="editpro?id={{ i['product_id'] }}" class="btn btn-success">UPDATE</a></p>
-        <p><a href="delpro?id={{ i['product_id'] }}" class="btn btn-danger">REMOVE</a></p></td>
+</style>
+
+
+<head>
+  <title> Bootstrap 4 datatable example </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"> </script>
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+</head>
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+font-family: 'Indie Flower', cursive;
+font-size: 32px;
+  color: #03A9F4;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+table.dataTable th
+{
+  background-color: grey;
+}
+table.dataTable td {
+  background-color: #fff;
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 14px;
+}
+
+img{
+  transition: 3s;
+}
+
+img:hover{
+transform: scale(3.5);
+}
+</style>
+<body>
+<br><br>
+
+  <div align="right"><a href="addproduct" class="btn btn-success">ADD PRODUCT</a></div></td>
+      <br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table  id="table_id" class="table table-bordered table-hover dt-responsive">
+        <thead>
+          <tr>
+            <th> name </th>
+            <th> details </th>
+            <th> price </th>
+            <th> category </th>
+            <th> stock </th>
+            <th> image </th>
+            <th> options </th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in val %}
+        <tr>
+        <td align="center">{{i['p_name']}}</td>
+        <td align="center">{{i['details']}}&nbsp;</td>
+        <td align="center">&nbsp;{{i['price']}}</td>
+        <td align="center">&nbsp;{{i['category_name']}}</td>
+        <td align="center">&nbsp;{{i['stock']}}</td>
+        <td align="center"><img src="/static/pro/product{{i['image']}}" height="50px" width="50px"/></td>
+        <td><p><a href="editpro?id={{ i['product_id'] }}" class="btn btn-warning btn-sm">UPDATE</a></p>
+        <p><a href="delpro?id={{ i['product_id'] }}" class="btn btn-danger btn-sm">REMOVE</a></p></td>
       </tr>
-      {% endfor %}
+        {% endfor %}
+        </tbody>
       </table>
+    </div>
   </div>
-</form>
+</div>
+
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+
+</script>
+</body>
+
+
+
+<!--<tr>-->
+        <!--<td colspan="7"><div align="right"><a href="addproduct" class="btn btn-success">ADD PRODUCT</a></div></td>-->
+      <!--</tr>-->
+    <!--<table class="table table-borderless table table-hover" align="center">-->
+      <!--<tr>-->
+        <!--<td colspan="6">-->
+          <!--<div align="right">-->
+            <!--<input type="text" name="textfield" class="form-control"/>-->
+             <!--</div>-->
+          <!--<div >-->
+
+           <!--</div>-->
+        <!--</td>-->
+        <!--&lt;!&ndash;<td colspan="2"> <input type="submit" name="Submit" value="SEARCH" class="btn btn-primary"/></td>&ndash;&gt;-->
+      <!--</tr>-->
+
+      <!--<thead class="thead-dark">-->
+      <!--<tr>-->
+        <!--<th width="107">NAME</th>-->
+        <!--<th width="144">DETAILS</th>-->
+        <!--<th width="103">PRICE</th>-->
+        <!--<th width="156">CATEGORY</th>-->
+        <!--<th width="136">STOCK</th>-->
+        <!--<th width="124">IMAGE</th>-->
+        <!--<th width="138">OPTIONS</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--{% for i in val %}-->
+      <!--<tr>-->
+        <!--<td>&nbsp;{{i['p_name']}}</td>-->
+        <!--<td>&nbsp;{{i['details']}}</td>-->
+        <!--<td>&nbsp;{{i['price']}}</td>-->
+        <!--<td>&nbsp;{{i['category_name']}}</td>-->
+        <!--<td>{{i['stock']}} {{i['qty']}}</td>-->
+        <!--<td><img src="/static/pro/product{{i['image']}}" height="50px" width="50px"/></td>-->
+
+        <!--<td><p><a href="editpro?id={{ i['product_id'] }}" class="btn btn-success btn-sm">UPDATE</a></p>-->
+        <!--<p><a href="delpro?id={{ i['product_id'] }}" class="btn btn-danger btn-sm">REMOVE</a></p></td>-->
+      <!--</tr>-->
+      <!--{% endfor %}-->
+      <!--</table>-->
+  <!--</div>-->
+<!--</form>-->
 
 {% endblock %}
 

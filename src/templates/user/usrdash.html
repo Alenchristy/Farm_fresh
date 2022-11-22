@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 70%;
 }
 
 #customers td, #customers th {
@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #d420ce;
+  background-color:grey;
   color: white;
 }
 </style>
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--logo start-->
 <div class="brand">
     <a href="index.html" class="logo">
-        FARM FRESH
+       <h2> FARM FRESH </h2>
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -81,6 +81,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--  notification end -->
 </div>
 <div class="top-nav clearfix">
+    <div align="center">
+      <img src="static/hompag/images/logo.png" alt="" /><span><b>
+              FARM FRESH
+        </b></span></div>
     <!--search & user info start-->
 
       <!--<td><label>-->
@@ -95,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li class="dropdown">
 
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <span class="username">USER</span>
+                <span class="username" >USER</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -129,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </li>
                 <li>
-                    <a href="fontawesome.html">
+                    <a href="/viewcart">
                         <!--<i class="fa fa-bullhorn"></i>-->
                         <span>CART </span>
                     </a>
@@ -141,15 +145,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                 </li>
                  <li>
-                    <a href="">
+                    <a href="myorders">
                         <!--<i class="fa fa-bullhorn"></i>-->
-                        <span> MY ORDERS </span>
+                        <span>MY ORDERS </span>
                     </a>
                 </li>
                  <li>
-                    <a href="">
+                    <a href="mybooking">
                         <!--<i class="fa fa-bullhorn"></i>-->
                         <span> MY BOOKINGS </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notif">
+                        <!--<i class="fa fa-bullhorn"></i>-->
+                        <span>NOTIFICATIONS </span>
                     </a>
                 </li>
             </ul>            </div>
@@ -162,11 +172,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<section class="wrapper">
 
 		<div class="row">
-			<div class="panel-body">
-				<div class="col-md-12 w3ls-graph">
+			<div >
+				<div >
 					<!--agileinfo-grap-->
 						<div>
-							<div class="agileits-box">
+							<div>
 								      {% block body %}
 
 

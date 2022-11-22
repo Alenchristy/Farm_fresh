@@ -1,0 +1,75 @@
+{% extends'admin home.html' %}
+
+{% block body %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="bookingm">
+  <div align="center">
+    <table width="360" height="231" border="1">
+      <tr>
+        <td width="127" height="55">From </td>
+        <td width="121"><label> </label>
+          <div align="left">
+            <input type="date" name="textfield2" min="{{d}}" id="textfield2" onchange="myFunction()"/>
+          </div></td>
+      </tr>
+
+         <tr>
+        <td width="127" height="55">To </td>
+        <td width="121"><label> </label>
+          <div align="left">
+            <input type="date" name="textfield2" min="{{d}}" id="textfield3"/>
+          </div></td>
+      </tr>
+
+      <tr>
+        <td height="65" colspan="2"><label>
+          <div align="center">
+            <input class="btn btn-warning" type="submit" name="Submit" value="BOOK" />
+            </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("textfield2").value;
+  const today = new Date(x);
+  today.setDate(today.getDate() + 1)
+let day = today.getDate();
+let mon = today.getMonth()+1;
+
+
+
+
+
+let year = today.getFullYear();
+
+var date1=year+"-";
+if (mon<10)
+{
+date1=date1+"0"
+}
+date1=date1+mon+"-";
+
+if (day<10)
+{
+date1=date1+"0"
+}
+date1=date1+day;
+var txt='<input type="date" name="textfield3" min="'+date1+'" />'
+
+document.getElementById("d").innerHTML=txt;
+
+}
+</script>
+</body>
+
+  {% endblock %}

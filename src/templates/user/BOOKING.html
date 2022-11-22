@@ -1,49 +1,167 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
+
+
+<form id="form1" name="form1" method="post" action="bookingm">
+  <div align="center">
+
+
+    <style>
+        .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+
+  border-radius: 15px;
+  background: #fff;
+  margin: auto;
+  width: 45%;
+  height: 30%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+<!--/* On mouse-over, add a deeper shadow */-->
+<!--.card:hover {-->
+  <!--box-shadow: 0 8px 16px 0 rgba(25, 72, 225, 0.2);-->
+<!--}-->
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+::-webkit-file-upload-button {
+  background: black;
+  color: green;
+  padding: 1em;
+  border-radius: 15px;
+}
+.card:hover {
+  box-shadow: 0 10px 18px 0 rgba(25, 72, 225, 0.2);
+  transform:scale(1.02);
+  transition: 2s;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+textarea {
+  border-radius: 10px;
+  resize: none;
+  border: 3px solid #73AD21;
+}
+
+input {
+  border-radius: 10px;
+  resize: none;
+  border: 3px solid #73AD21;
+}
+
+.btn{
+  width: 200px;
+}
+
+    </style>
 </head>
 
-<body>
-<form id="form1" name="form1" method="post" action="">
-  <div align="center">
-    <table width="360" height="244" border="1">
-      <tr>
-        <td width="127">NAME</td>
-        <td width="121"><label>
-          <input type="text" name="textfield2" />
-        </label></td>
+
+<br><br>
+<div class="card" align="center">
+
+            <div class="card-body" >
+              <h5 class="card-title"></h5>
+
+                <br><br><tr>
+        <td width="127" height="55">BOOKING DATE: </td><input type="date" name="textfield2" min="{{d}}" id="textfield" onchange="myFunction()"/>
+          <div >
+
+          </div></td>
       </tr>
+
       <tr>
-        <td>ADDRESS</td>
-        <td><label>
-          <select name="select">
-          </select>
-        </label></td>
-      </tr>
-      <tr>
-        <td>BOOKING DATE </td>
-        <td><label>
-          <select name="select2">
-          </select>
-        </label></td>
-      </tr>
-      <tr>
-        <td>RATE</td>
-        <td><label>
-          <input type="text" name="textfield" />
-        </label></td>
-      </tr>
-      <tr>
-        <td height="79" colspan="2"><label>
-          <div align="center">
-            <input type="submit" name="Submit" value="BOOK" />
+        <td height="65" colspan="2"><label>
+          <div align="center"><br><br>
+            <input class="btn btn-warning" type="submit" name="Submit" value="BOOK" />
             </div>
         </label></td>
       </tr>
-      </table>
-  </div>
+
+          </div>
+
+</div></div>
+
 </form>
+
+
+
+
+
+
+
+
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<form id="form1" name="form1" method="post" action="bookingm">-->
+  <!--<div align="center">-->
+    <!--<table width="360" height="231" border="1">-->
+      <!--<tr>-->
+        <!--<td width="127" height="55">BOOKING DATE </td>-->
+        <!--<td width="121"><label> </label>-->
+          <!--<div align="left">-->
+            <!--<input type="date" name="textfield2" min="{{d}}" id="textfield2" onchange="myFunction()"/>-->
+          <!--</div></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<td height="65" colspan="2"><label>-->
+          <!--<div align="center">-->
+            <!--<input class="btn btn-warning" type="submit" name="Submit" value="BOOK" />-->
+            <!--</div>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+      <!--</table>-->
+  <!--</div>-->
+<!--</form>-->
+
+<script>
+function myFunction() {
+  var x = document.getElementById("textfield2").value;
+  const today = new Date(x);
+  today.setDate(today.getDate() + 1)
+let day = today.getDate();
+let mon = today.getMonth()+1;
+
+
+
+
+
+let year = today.getFullYear();
+
+var date1=year+"-";
+if (mon<10)
+{
+date1=date1+"0"
+}
+date1=date1+mon+"-";
+
+if (day<10)
+{
+date1=date1+"0"
+}
+date1=date1+day;
+var txt='<input type="date" name="textfield3" min="'+date1+'" />'
+
+document.getElementById("d").innerHTML=txt;
+
+}
+</script>
 </body>
-</html>
+{% endblock %}

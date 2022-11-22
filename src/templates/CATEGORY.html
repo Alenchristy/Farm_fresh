@@ -4,27 +4,30 @@
 
 <form id="form1" name="form1" method="post" action="">
   <div align="center">
-    <table class="" border="1" id="customers" >
-    <!--<table class="table table-hover table table-dark">-->
+    <!--<div align="right"><a href="addcategory" class="btn btn-success">ADD CATEGORY</a></div>-->
+    <table id="" class="table table-borderless table-light table-hover mt-4" >
+      <!--<thead class="thead-dark">-->
       <tr>
-        <td height="39" colspan="3"><div align="right"><a href="addcategory" class="btn btn-success">ADD CATEGORY</a></div></td>
+        <td height="60" colspan="6"><div align="right"><a href="addcategory" class="btn btn-success">ADD CATEGORY</a></div></td>
       </tr>
+
       <tr>
-        <th width="172" height="53"><div align="center">CATEGORY NAME </div></th>
-        <th width="88"><div align="center">IMAGE</div></th>
-        <th width="190">Options&nbsp;</th>
+        <th><div align="center">CATEGORY NAME </div></th>
+        <th><div align="center">IMAGE</div></th>
+        <th><div align="center">OPTIONS&nbsp;</div></th>
+        <th><div align="center">STATUS</div></th>
       </tr>
+      </thead>
       {% for i in val %}
-      <tr>
-        <td>{{i['category_name']}}</td>
-        <td><img src="/static/cat/category{{i['image']}}" height="50px" width="50px"/></td>
-        <td><a href="upcat?id={{ i['category_id'] }}" class="btn btn-success">UPDATE</a>&nbsp;
-        <a href="delcat?id={{ i['category_id'] }}" class="btn btn-danger">REMOVE</a></td>
+      <tr align="center">
+        <td ><div align="center">{{i['category_name']}}</div></td>
+        <td><div align="center"><img src="/static/cat/category{{i['image']}}" height="50px" width="50px"/></div></td>
+        <td><div align="center"><p><a href="upcat?id={{ i['category_id'] }}" class="btn btn-warning btn-sm">UPDATE</a></p></div></td>
+        <td ><div align="center">{{i['status']}}</div></td>
+          <!--<p><a href="delcat?id={{ i['category_id'] }}" class="btn btn-danger">REMOVE</a></p></td>-->
       </tr>
       {% endfor %}
       </table>
   </div>
 </form>
-</body>
-</html>
 {% endblock %}}

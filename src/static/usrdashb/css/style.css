@@ -42,7 +42,7 @@ body a:hover{
     width:240px;
     height:100%;
     position:fixed;
-    background:rgba(52, 48, 48, 0.78);
+    background:rgba(28, 27, 27, 0.78);
     -webkit-transition:all .3s ease-in-out;
     -moz-transition:all .3s ease-in-out;
     -o-transition:all .3s ease-in-out;
@@ -131,7 +131,7 @@ ul.sidebar-menu li ul.sub li a {
     -moz-transition:all 0.3s ease;
     -o-transition:all 0.3s ease;
     -ms-transition:all 0.3s ease;
-    transition:all 0.3s ease;
+    transition:all 0.7s ease;
     color:#fff;
 }
 ul.sidebar-menu li ul.sub li a:hover,ul.sidebar-menu li ul.sub li.active a {

@@ -1,32 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+{% extends 'user/usrdash.html' %}
+
+{% block body %}
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
+  <style>
+    .btn{
+    width: 100%;
+    }
+  </style>
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="">
   <div align="center">
-    <table width="622" height="122" border="1">
+    <table width="622" height="122" border="1" id="customers">
+
       <tr>
-        <td width="156"><div align="center">DELIVERY ADDRESS </div></td>
-        <td width="119"><div align="center">DELIVERY DATE</div></td>
-        <td width="137"><div align="center">ORDER AMOUNT </div></td>
-        <td width="70"><div align="center">STATUS</div></td>
-        <td width="106">&nbsp;</td>
+        <th width="156"><div align="center">Sl No </div></th>
+        <th width="156"><div align="center">DELIVERY ADDRESS </div></th>
+        <th width="119"><div align="center">DELIVERY DATE</div></th>
+        <th width="137"><div align="center">ORDER AMOUNT </div></th>
+        <th width="137"><div align="center">ORDER STATUS </div></th>
+        <th width="106">OPTIONS</th>
       </tr>
+
+      {% for i in val %}
       <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><label>
-          <input type="submit" name="Submit" value="CANCEL ORDER" />
-        </label></td>
+        <td><div align="center">{{ loop.index }}</td>
+        <td><div align="center">{{i['del_address']}}</td>
+        <td><div align="center">{{i['del_date']}}</td>
+        <td><div align="center">{{i['price']}}</td>
+        <td><div align="center">{{i['status']}}</td>
+        <td>
+          <div>
+          <a href="vieworder?id={{i['order_id']}}" class="btn btn-warning" >VIEW</a></div><br>
+          <a href="cancelorder?id={{i['order_id']}}" class="btn btn-danger" >CANCEL ORDER</a>
       </tr>
+      {% endfor %}
       </table>
   </div>
 </form>
 </body>
-</html>
+{% endblock %}
+

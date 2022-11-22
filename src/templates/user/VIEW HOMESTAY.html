@@ -2,35 +2,119 @@
 
 {% block body %}
 
+
+     <style>
+        .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+
+  border-radius: 15px;
+  background: #fff;
+  margin: auto;
+  width: 45%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+<!--/* On mouse-over, add a deeper shadow */-->
+<!--.card:hover {-->
+  <!--box-shadow: 0 8px 16px 0 rgba(25, 72, 225, 0.2);-->
+<!--}-->
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+::-webkit-file-upload-button {
+  background: black;
+  color: green;
+  padding: 1em;
+  border-radius: 15px;
+}
+.card:hover {
+  box-shadow: 0 10px 18px 0 rgba(25, 72, 225, 0.2);
+  transform:scale(1.02);
+  transition: 2s;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 4px 16px;
+}
+
+textarea {
+  border-radius: 10px;
+  resize: none;
+  border: 3px solid #73AD21;
+}
+
+input {
+  border-radius: 10px;
+  resize: none;
+  border: 3px solid #73AD21;
+}
+
+.btn{
+  width: 200px;
+}
+
+    </style>
+</head>
+
 <form id="form1" name="form1" method="post" action="">
-  <div align="center"> 
-    <table width="487" height="391" border="1" id="customers">
-      <tr>
-        <th width="250" height="53"><div align="center"> IMAGE </div></th>
-        <td width="221"><img src="/static/hom/hom{{val['image']}}" height="50px" width="50px"/></td>
-      </tr>
-      <tr>
-        <th height="48"><div align="center">HOME-STAY NAME </div></th>
-        <td>{{val['h_name']}} </td>
-      </tr>
-      <tr>
-        <th height="51"><div align="center">RATE</div></th>
-        <td>{{val['rate']}} </td>
-      </tr>
-      <tr>
-        <th height="59"><div align="center">AVAILABILITY</div></th>
-        <td>{{val['status']}}</td>
-      </tr>
-      <tr>
-        <th height="74"><div align="center">DETAILS</div></th>
-        <td>{{val['details']}}</td>
-      </tr>
-      <tr>
-        <td height="70" colspan="2"><label>
-            <div align="center" class="btn btn-success"><a href="">BOOK NOW</a></div>
-        </label></td>
-      </tr>
-    </table>
+<br><br>
+<div class="card" align="center">
+
+            <div class="card-body" >
+              <h5 class="card-title"></h5>
+
+                <div><h4><img src="/static/hom/hom{{val['image']}}" height="130px" width="120px"/><label></label></h4></div>
+                <br>
+              <div><h4>{{val['h_name']}}</h4></div>
+              <br>
+
+              <div>₹ {{val['rate']}}</div>
+              <br>
+              <div>{{val['details']}}</div>
+              <br><div align="center" class="btn btn-warning"><a href="booking?id={{val['h_id']}}">BOOK NOW</a></div><br>
+            </div>
+          </div>
+
+  </div>
+
+
+
+
+
+
+    <!--<table width="487" height="391" border="1" id="customers">-->
+      <!--<tr>-->
+        <!--<th width="250" height="53"><div align="center"> IMAGE </div></th>-->
+        <!--<td width="221"><img src="/static/hom/hom{{val['image']}}" height="50px" width="50px"/></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="48"><div align="center">HOME-STAY NAME </div></th>-->
+        <!--<td>{{val['h_name']}} </td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="51"><div align="center">RATE</div></th>-->
+        <!--<td>{{val['rate']}} /Day </td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="59"><div align="center">AVAILABILITY</div></th>-->
+        <!--<td>{{val['status']}}</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th height="74"><div align="center">DETAILS</div></th>-->
+        <!--<td>{{val['details']}}</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td height="70" colspan="2"><label>-->
+            <!--<div align="center" class="btn btn-success"><a href="booking?id={{val['h_id']}}">BOOK NOW</a></div>-->
+        <!--</label></td>-->
+      <!--</tr>-->
+    <!--</table>-->
   </div>
 </form>
 {% endblock %}
